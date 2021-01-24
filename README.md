@@ -1,1 +1,5 @@
 # Bash-like_shell
+Creating a bash like shell that supports following functionalities:
+1. Searches for the given command in the paths provided under the PATH environment variable by finding the executable with name of command in that location. Stops searching upon hitting the first match, otherwise gives a command not found error. Creates a child process using the `execv()` and runs the provided command in this child process. Parent waits for child to finish.
+
+2. Added the functionality of creating and listing shared memeory segments. Current design is hard-coded to allow creation of at max 10 shared memory segments, exceding the limit will cause appropriate error. `shmcreate <size>` is used to create shared memory segment of given size. `shmls` lists all the available shared memory segment, 0 indicates the shared memory segment not being created. 
